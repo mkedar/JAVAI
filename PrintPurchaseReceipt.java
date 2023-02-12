@@ -27,8 +27,12 @@ class PrintPurchaseReceipt {
         System.out.println("Price:      $" + itemPrice);
         System.out.println("Quantity:   " + itemQuantity);
         System.out.println("Subtotal:   $" + itemQuantity*itemPrice);
-        System.out.println("Tax:        $" + itemQuantity*itemPrice*TAX);
-        System.out.println("Total:      $" + ((itemQuantity*itemPrice) + itemQuantity*itemPrice*TAX));
+        double taxs = itemQuantity * itemPrice * TAX;
+        taxs = Math.round(taxs * 100.0) / 100.0;
+        System.out.println("Tax:        $" + taxs);
+        double total = ((itemQuantity*itemPrice) + itemQuantity*itemPrice*TAX);
+        total = Math.round(total * 100.0) / 100.0;
+        System.out.println("Total:      $" + total);
         System.out.println("Gift (y/n): " + giftC );
         System.out.println("Occasion:   " + description);
         System.out.println("============================");
